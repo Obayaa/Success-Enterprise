@@ -13,12 +13,9 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
+# vite
+/dist
+.vite
 
 # misc
 .DS_Store
@@ -32,15 +29,17 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
-# vercel
+# vercel / netlify
 .vercel
+.netlify
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
-/src/generated/prisma
+# supabase CLI local state
+/supabase/.temp
 
 # AI tool skill caches (local, re-downloaded per tool)
 /.agents/
