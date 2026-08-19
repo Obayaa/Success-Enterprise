@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/manrope/800.css";
+
+@theme {
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0b1220;
+  --color-brand-50: #eef1fe;
+  --color-brand-100: #dde3fd;
+  --color-brand-300: #a3b1f6;
+  --color-brand-500: #3450e0;
+  --color-brand-600: #223cd6;
+  --color-brand-700: #182aa8;
+  --color-glow: #ffb020;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* #root is what actually holds Header/main/Footer (body's only child is
+   this div) — the sticky-footer flex column has to live here, not on body. */
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category pill row scrolls on mobile without showing the native scrollbar chrome. */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Signature hero motif: a soft "ring light" halo wash over the hero photo. */
+.hero-glow {
+  background-image:
+    radial-gradient(circle at 82% 12%, color-mix(in srgb, var(--color-glow) 60%, transparent) 0%, transparent 40%),
+    radial-gradient(circle at 82% 12%, transparent 25%, color-mix(in srgb, var(--color-glow) 45%, transparent) 28%, transparent 32%),
+    linear-gradient(
+      100deg,
+      color-mix(in srgb, var(--color-ink) 94%, transparent) 0%,
+      color-mix(in srgb, var(--color-ink) 80%, transparent) 40%,
+      color-mix(in srgb, var(--color-brand-700) 55%, transparent) 100%
+    );
+}

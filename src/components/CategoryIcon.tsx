@@ -1,22 +1,13 @@
 const ICONS: Record<string, React.ReactNode> = {
-  phones: (
-    <path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm2 16h4" />
-  ),
-  'phone-accessories': (
-    <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" strokeLinejoin="round" />
-  ),
-  laptops: (
-    <path d="M4 5h16v10H4V5Zm-2 14h20l-2-4H4l-2 4Z" strokeLinejoin="round" />
-  ),
-  'laptop-accessories': (
-    <path d="M12 2a5 5 0 0 1 5 5v6a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5Zm0 0v6m-5 1h10" />
-  ),
-  airpods: (
-    <path d="M8 4a3 3 0 0 1 3 3v9a3 3 0 1 1-3-3V7a3 3 0 0 1 3-3Zm8 0a3 3 0 0 0-3 3v9a3 3 0 1 0 3-3V7a3 3 0 0 0-3-3Z" strokeLinejoin="round" />
-  ),
-  'airpods-cases': (
-    <path d="M6 10a6 6 0 0 1 12 0v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-6Zm3 0v-1a3 3 0 0 1 6 0v1" />
-  ),
+  airpods: <path d="M8 4a3 3 0 0 1 3 3v9a3 3 0 1 1-3-3V7a3 3 0 0 1 3-3Zm8 0a3 3 0 0 0-3 3v9a3 3 0 1 0 3-3V7a3 3 0 0 0-3-3Z" strokeLinejoin="round" />,
+  microphones: <path d="M12 2a3 3 0 0 1 3 3v6a3 3 0 1 1-6 0V5a3 3 0 0 1 3-3Zm-6 9a6 6 0 0 0 12 0M12 17v4m-3 0h6" strokeLinecap="round" />,
+  'ring-lights': <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />,
+  'phone-covers': <path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm2 16h4" />,
+  'phone-holders': <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" strokeLinejoin="round" />,
+  'laptop-accessories': <path d="M4 5h16v10H4V5Zm-2 14h20l-2-4H4l-2 4Z" strokeLinejoin="round" />,
+  keyboards: <path d="M3 6h18v12H3V6Zm3 3h.01M9 9h.01M12 9h.01M15 9h.01M18 9h.01M6 12h.01M9 12h.01M12 12h.01M15 12h.01M18 12h.01M8 15h8" />,
+  mice: <path d="M12 3a6 6 0 0 1 6 6v6a6 6 0 1 1-12 0V9a6 6 0 0 1 6-6Zm0 0v6" strokeLinejoin="round" />,
+  tripods: <path d="M12 3v10m0 0-6 8m6-8 6 8M6 21h12" strokeLinecap="round" />,
 };
 
 const DEFAULT = <path d="M4 7h16v13H4V7Zm0 0 3-4h10l3 4" strokeLinejoin="round" />;
