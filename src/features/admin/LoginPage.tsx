@@ -25,12 +25,18 @@ export function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-neutral-50 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-brand-50 px-4">
+      <div className="flex items-center gap-2 mb-6">
+        <span className="font-display font-extrabold text-ink text-lg">Success Enterprise</span>
+        <span className="text-[10px] font-semibold uppercase tracking-wide text-neutral-500 bg-white px-1.5 py-0.5 rounded border border-neutral-200">
+          Admin
+        </span>
+      </div>
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-sm flex flex-col gap-4 bg-white p-8 rounded-lg shadow-sm border border-neutral-200"
       >
-        <h1 className="font-display text-xl font-bold text-ink">Admin Login</h1>
+        <h1 className="font-display text-xl font-bold text-ink">Sign in</h1>
         <div className="flex flex-col gap-1">
           <label htmlFor="email" className="text-sm text-neutral-600">
             Email
