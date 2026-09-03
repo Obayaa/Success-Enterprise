@@ -15,6 +15,7 @@ const ICONS: Record<string, React.ReactNode> = {
   headphones: <path d="M3 14v-3a9 9 0 1 1 18 0v3 M21 14v4a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z M3 14v4a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3Z" strokeLinejoin="round" />,
   lamps: <path d="M7 3h10l-3 6h-4L7 3Z M12 9v9 M8 21h8" strokeLinejoin="round" />,
   'gadgets-toys': <path d="M12 2 2 7l10 5 10-5-10-5Z M2 17l10 5 10-5 M2 12l10 5 10-5" strokeLinejoin="round" />,
+  'chargers-cables': <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" strokeLinejoin="round" />,
 };
 
 const DEFAULT = <path d="M4 7h16v13H4V7Zm0 0 3-4h10l3 4" strokeLinejoin="round" />;
