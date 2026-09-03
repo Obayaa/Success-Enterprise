@@ -50,6 +50,11 @@ export function ProductCard({ slug, name, description, price, compareAtPrice, im
           </span>
           {stock <= 0 && <span className="text-xs text-red-500">Out of stock</span>}
         </div>
+        {stock > 0 && (
+          <span className={`text-xs ${stock <= 5 ? 'text-amber-600' : 'text-neutral-400'}`}>
+            {stock <= 5 ? `Only ${stock} left` : `${stock} in stock`}
+          </span>
+        )}
       </div>
     </Link>
   );
