@@ -9,7 +9,7 @@ insert into categories (name, slug) values
   ('Phone Holders', 'phone-holders'),
   ('Laptop Accessories', 'laptop-accessories'),
   ('Keyboards', 'keyboards'),
-  ('Mice', 'mice'),
+  ('Mouses', 'mouses'),
   ('Tripods', 'tripods'),
   ('Speakers', 'speakers'),
   ('Smartwatches', 'smartwatches'),
