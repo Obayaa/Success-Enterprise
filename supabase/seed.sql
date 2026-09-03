@@ -10,5 +10,11 @@ insert into categories (name, slug) values
   ('Laptop Accessories', 'laptop-accessories'),
   ('Keyboards', 'keyboards'),
   ('Mice', 'mice'),
-  ('Tripods', 'tripods')
+  ('Tripods', 'tripods'),
+  ('Speakers', 'speakers'),
+  ('Smartwatches', 'smartwatches'),
+  ('Security Cameras', 'security-cameras'),
+  ('Routers & Networking', 'routers'),
+  ('Headphones', 'headphones'),
+  ('Lamps & Decor Lighting', 'lamps')
 on conflict (slug) do nothing;
