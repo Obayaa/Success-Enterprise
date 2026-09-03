@@ -7,6 +7,7 @@ export type ProductFormValues = {
   name: string;
   description: string;
   pricePesewas: number;
+  compareAtPricePesewas: number | null;
   stock: number;
   categoryId: string;
   imageUrl: string;
@@ -50,10 +51,19 @@ export function ProductForm({ categories, initial, submitLabel = 'Save', onSubmi
     const formData = new FormData(e.currentTarget);
     setSubmitting(true);
     try {
+      const compareAtRaw = String(formData.get('compareAtPrice') ?? '').trim();
+      const pricePesewas = Math.round(Number(formData.get('price')) * 100);
+      const compareAtPricePesewas = compareAtRaw ? Math.round(Number(compareAtRaw) * 100) : null;
+      if (compareAtPricePesewas !== null && compareAtPricePesewas <= pricePesewas) {
+        setError('Compare-at price must be higher than the price for a discount to show.');
+        setSubmitting(false);
+        return;
+      }
       await onSubmit({
         name: String(formData.get('name') ?? '').trim(),
         description: String(formData.get('description') ?? '').trim(),
-        pricePesewas: Math.round(Number(formData.get('price')) * 100),
+        pricePesewas,
+        compareAtPricePesewas,
         stock: Number(formData.get('stock') ?? 0),
         categoryId: String(formData.get('categoryId') ?? ''),
         imageUrl,
@@ -95,23 +105,44 @@ export function ProductForm({ categories, initial, submitLabel = 'Save', onSubmi
             />
           </div>
           <div className="flex flex-col gap-1.5">
+            <label className={labelClass}>
+              Compare-at price <span className="font-normal text-neutral-400">(optional)</span>
+            </label>
+            <input
+              name="compareAtPrice"
+              type="number"
+              step="0.01"
+              min="0"
+              placeholder="e.g. 250.00"
+              defaultValue={
+                initial?.compareAtPricePesewas != null ? (initial.compareAtPricePesewas / 100).toFixed(2) : undefined
+              }
+              className={fieldClass}
+            />
+          </div>
+        </div>
+        <p className="text-xs text-neutral-400 -mt-2.5">
+          Set this to the old price to show a struck-through "was" price when running a sale.
+        </p>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col gap-1.5">
             <label className={labelClass}>Stock</label>
             <input name="stock" type="number" min="0" required defaultValue={initial?.stock} className={fieldClass} />
           </div>
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <label className={labelClass}>Category</label>
-          <select name="categoryId" required defaultValue={initial?.categoryId} className={fieldClass}>
-            <option value="" disabled>
-              Select a category
-            </option>
-            {categories.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
+          <div className="flex flex-col gap-1.5">
+            <label className={labelClass}>Category</label>
+            <select name="categoryId" required defaultValue={initial?.categoryId} className={fieldClass}>
+              <option value="" disabled>
+                Select a category
               </option>
-            ))}
-          </select>
+              {categories.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <label className="flex items-center gap-2 text-sm text-neutral-600 mt-1">

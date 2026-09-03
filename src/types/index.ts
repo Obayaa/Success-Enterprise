@@ -11,6 +11,7 @@ export type Product = {
   slug: string;
   description: string;
   price_pesewas: number;
+  compare_at_price_pesewas: number | null;
   stock: number;
   images: string[];
   published: boolean;

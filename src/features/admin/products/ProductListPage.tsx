@@ -70,7 +70,14 @@ export function ProductListPage() {
               <tr key={p.id} className="border-t border-neutral-100">
                 <td className="px-4 py-2 text-neutral-900">{p.name}</td>
                 <td className="px-4 py-2 text-neutral-600">{p.category?.name}</td>
-                <td className="px-4 py-2 text-neutral-600">{formatPrice(p.price_pesewas)}</td>
+                <td className="px-4 py-2 text-neutral-600">
+                  {formatPrice(p.price_pesewas)}
+                  {p.compare_at_price_pesewas != null && p.compare_at_price_pesewas > p.price_pesewas && (
+                    <span className="ml-1.5 text-xs text-neutral-400 line-through">
+                      {formatPrice(p.compare_at_price_pesewas)}
+                    </span>
+                  )}
+                </td>
                 <td className="px-4 py-2 text-neutral-600">{p.stock}</td>
                 <td className="px-4 py-2">
                   <span

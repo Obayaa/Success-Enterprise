@@ -30,6 +30,7 @@ export function EditProductPage() {
           name: product.name,
           description: product.description,
           pricePesewas: product.price_pesewas,
+          compareAtPricePesewas: product.compare_at_price_pesewas,
           stock: product.stock,
           categoryId: product.category_id,
           imageUrl: product.images[0] ?? '',

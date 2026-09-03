@@ -50,7 +50,15 @@ export function CartPage() {
               <Link to={`/product/${item.slug}`} className="text-sm font-medium text-neutral-900 hover:text-brand-600 line-clamp-1">
                 {item.name}
               </Link>
-              <p className="text-sm text-neutral-500">{formatPrice(item.price)}</p>
+              <p className="flex items-baseline gap-1.5">
+                <span className="text-sm text-neutral-500">{formatPrice(item.price)}</span>
+                {item.compareAtPrice != null && item.compareAtPrice > item.price && (
+                  <span className="text-xs text-neutral-400 line-through">{formatPrice(item.compareAtPrice)}</span>
+                )}
+              </p>
+              {item.stock <= 5 && (
+                <p className="text-xs text-amber-600 mt-0.5">Only {item.stock} left in stock</p>
+              )}
             </div>
 
             <div className="flex flex-col items-end gap-1.5">

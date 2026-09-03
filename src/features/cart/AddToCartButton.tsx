@@ -6,11 +6,12 @@ type Props = {
   name: string;
   slug: string;
   price: number;
+  compareAtPrice: number | null;
   image: string | null;
   stock: number;
 };
 
-export function AddToCartButton({ productId, name, slug, price, image, stock }: Props) {
+export function AddToCartButton({ productId, name, slug, price, compareAtPrice, image, stock }: Props) {
   const addItem = useCartStore((s) => s.addItem);
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
@@ -54,7 +55,7 @@ export function AddToCartButton({ productId, name, slug, price, image, stock }: 
 
       <button
         onClick={() => {
-          addItem({ productId, name, slug, price, image, stock }, qty);
+          addItem({ productId, name, slug, price, compareAtPrice, image, stock }, qty);
           setAdded(true);
         }}
         className="bg-neutral-900 text-white rounded-md px-6 py-3 text-sm font-medium hover:bg-neutral-800"

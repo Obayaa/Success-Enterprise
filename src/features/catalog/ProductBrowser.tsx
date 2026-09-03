@@ -144,6 +144,7 @@ export function ProductBrowser({
               name={p.name}
               description={p.description}
               price={p.price_pesewas}
+              compareAtPrice={p.compare_at_price_pesewas}
               image={p.images[0] ?? null}
               categorySlug={p.category.slug}
               stock={p.stock}

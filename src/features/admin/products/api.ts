@@ -33,6 +33,7 @@ export type ProductInput = {
   name: string;
   description: string;
   pricePesewas: number;
+  compareAtPricePesewas: number | null;
   stock: number;
   categoryId: string;
   imageUrl: string;
@@ -46,6 +47,7 @@ export async function createProduct(input: ProductInput): Promise<void> {
     slug,
     description: input.description,
     price_pesewas: input.pricePesewas,
+    compare_at_price_pesewas: input.compareAtPricePesewas,
     stock: input.stock,
     category_id: input.categoryId,
     images: input.imageUrl ? [input.imageUrl] : [],
@@ -63,6 +65,7 @@ export async function updateProduct(id: string, input: ProductInput): Promise<vo
       slug,
       description: input.description,
       price_pesewas: input.pricePesewas,
+      compare_at_price_pesewas: input.compareAtPricePesewas,
       stock: input.stock,
       category_id: input.categoryId,
       images: input.imageUrl ? [input.imageUrl] : [],

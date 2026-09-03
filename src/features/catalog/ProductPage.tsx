@@ -23,6 +23,10 @@ export function ProductPage() {
   }
 
   const image = product.images[0] ?? null;
+  const onSale = product.compare_at_price_pesewas != null && product.compare_at_price_pesewas > product.price_pesewas;
+  const percentOff = onSale
+    ? Math.round((1 - product.price_pesewas / product.compare_at_price_pesewas!) * 100)
+    : 0;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-6">
@@ -47,7 +51,19 @@ export function ProductPage() {
             {product.category.name}
           </Link>
           <h1 className="font-display text-2xl font-bold text-ink">{product.name}</h1>
-          <p className="text-xl font-semibold text-brand-600">{formatPrice(product.price_pesewas)}</p>
+          <div className="flex items-center gap-2">
+            <p className="text-xl font-semibold text-brand-600">{formatPrice(product.price_pesewas)}</p>
+            {onSale && (
+              <>
+                <p className="text-base text-neutral-400 line-through">
+                  {formatPrice(product.compare_at_price_pesewas!)}
+                </p>
+                <span className="bg-red-600 text-white text-[10px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded">
+                  -{percentOff}%
+                </span>
+              </>
+            )}
+          </div>
           <p className="text-neutral-600 whitespace-pre-line">{product.description}</p>
           <div>
             <AddToCartButton
@@ -55,6 +71,7 @@ export function ProductPage() {
               name={product.name}
               slug={product.slug}
               price={product.price_pesewas}
+              compareAtPrice={product.compare_at_price_pesewas}
               image={image}
               stock={product.stock}
             />
