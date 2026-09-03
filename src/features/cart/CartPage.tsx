@@ -56,9 +56,9 @@ export function CartPage() {
                   <span className="text-xs text-neutral-400 line-through">{formatPrice(item.compareAtPrice)}</span>
                 )}
               </p>
-              {item.stock <= 5 && (
-                <p className="text-xs text-amber-600 mt-0.5">Only {item.stock} left in stock</p>
-              )}
+              <p className={`text-xs mt-0.5 ${item.stock <= 5 ? 'text-amber-600' : 'text-neutral-400'}`}>
+                {item.stock <= 5 ? `Only ${item.stock} left in stock` : `${item.stock} in stock`}
+              </p>
             </div>
 
             <div className="flex flex-col items-end gap-1.5">

@@ -64,6 +64,11 @@ export function ProductPage() {
               </>
             )}
           </div>
+          {product.stock > 0 && (
+            <p className={`text-sm ${product.stock <= 5 ? 'text-amber-600' : 'text-neutral-400'}`}>
+              {product.stock <= 5 ? `Only ${product.stock} left in stock` : `${product.stock} in stock`}
+            </p>
+          )}
           <p className="text-neutral-600 whitespace-pre-line">{product.description}</p>
           <div>
             <AddToCartButton
