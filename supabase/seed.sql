@@ -16,5 +16,6 @@ insert into categories (name, slug) values
   ('Security Cameras', 'security-cameras'),
   ('Routers & Networking', 'routers'),
   ('Headphones', 'headphones'),
-  ('Lamps & Decor Lighting', 'lamps')
+  ('Lamps & Decor Lighting', 'lamps'),
+  ('Gadgets & Toys', 'gadgets-toys')
 on conflict (slug) do nothing;
