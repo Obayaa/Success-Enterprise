@@ -7,7 +7,7 @@ export function Header() {
   const { session } = useAuth();
 
   return (
-    <header className="border-b border-neutral-200 bg-white/90 backdrop-blur sticky top-0 z-10">
+    <header className="border-b border-neutral-200 bg-white/90 backdrop-blur sticky top-0 z-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
         <NavLink to="/" className="font-display font-extrabold text-lg tracking-tight text-ink">
           Success Enterprise
