@@ -52,7 +52,7 @@ export function HomePage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full">
+      <div id="products" className="scroll-mt-20 max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full">
         {productsQuery.isLoading || categoriesQuery.isLoading ? (
           <p className="text-neutral-500 text-sm py-12 text-center">Loading products…</p>
         ) : productsQuery.isError || categoriesQuery.isError ? (
