@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { ScrollToTop } from '@/components/ScrollToTop';
 import { StorefrontLayout } from '@/components/StorefrontLayout';
 import { HomePage } from '@/features/catalog/HomePage';
 import { ProductPage } from '@/features/catalog/ProductPage';
@@ -20,6 +21,7 @@ import { OrderDetailPage } from '@/features/admin/orders/OrderDetailPage';
 export function App() {
   return (
     <AuthProvider>
+      <ScrollToTop />
       <Routes>
         <Route element={<StorefrontLayout />}>
           <Route path="/" element={<HomePage />} />

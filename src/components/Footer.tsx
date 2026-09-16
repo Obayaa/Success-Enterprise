@@ -41,8 +41,8 @@ export function Footer() {
             >
               WhatsApp: 053 286 2478
             </a>
-            <a href="tel:+233532862478" className="hover:text-white transition-colors">
-              Call: 053 286 2478
+            <a href="tel:+233503025594" className="hover:text-white transition-colors">
+              Call: 050 302 5594
             </a>
             <a href="mailto:chibueze245@gmail.com" className="hover:text-white transition-colors">
               chibueze245@gmail.com
