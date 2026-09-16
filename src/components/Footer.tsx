@@ -16,6 +16,7 @@ export function Footer() {
           <p className="text-sm text-neutral-400 sm:max-w-[24ch]">
             IT and content-creation accessories for students, creators, and professionals across Ghana.
           </p>
+          <p className="text-xs text-neutral-500 italic">"The young shall grow."</p>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -32,7 +33,28 @@ export function Footer() {
         <div className="flex flex-col gap-3">
           <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Support</span>
           <div className="flex flex-col gap-2 text-sm">
-            <span>Questions? Reach us on WhatsApp or by phone.</span>
+            <a
+              href="https://wa.me/233532862478?text=Hi!%20I%20have%20a%20question%20about%20a%20product%20on%20your%20website."
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              WhatsApp: 053 286 2478
+            </a>
+            <a href="tel:+233532862478" className="hover:text-white transition-colors">
+              Call: 053 286 2478
+            </a>
+            <a href="mailto:chibueze245@gmail.com" className="hover:text-white transition-colors">
+              chibueze245@gmail.com
+            </a>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=MRGH%2BM43+Madina%2C+Ghana"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Madina GPRTU Station
+            </a>
             <Link to="/cart" className="hover:text-white transition-colors">
               Your cart
             </Link>
