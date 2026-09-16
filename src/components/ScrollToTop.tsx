@@ -9,7 +9,8 @@ export function ScrollToTop() {
   const { pathname, search } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   }, [pathname, search]);
 
   return null;
