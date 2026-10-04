@@ -88,28 +88,28 @@ export function CheckoutPage() {
           name="customerName"
           placeholder="Full name"
           required
-          className="border border-neutral-300 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
+          className="w-full border border-neutral-300 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
         />
         <input
           name="phone"
           type="tel"
           placeholder="Phone number"
           required
-          className="border border-neutral-300 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
+          className="w-full border border-neutral-300 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
         />
         <input
           name="email"
           type="email"
           placeholder="Email"
           required
-          className="border border-neutral-300 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
+          className="w-full border border-neutral-300 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
         />
         <textarea
           name="address"
           placeholder="Delivery address"
           required
           rows={3}
-          className="border border-neutral-300 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
+          className="w-full border border-neutral-300 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
         />
 
         {error && <p className="text-sm text-red-600">{error}</p>}
