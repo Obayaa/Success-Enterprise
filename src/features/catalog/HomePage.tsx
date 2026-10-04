@@ -31,12 +31,11 @@ export function HomePage() {
         <div className="hero-glow absolute inset-0" />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col gap-4">
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-tight text-balance max-w-xl">
-            Phones, electronics &amp; content-creation gear, sorted.
+            Welcome to Success Enterprise — the home of quality tech.
           </h1>
           <p className="text-neutral-300 text-base sm:text-lg max-w-xl">
-            AirPods, earbuds &amp; headphones, phone covers, holders &amp; chargers, keyboards, mice
-            &amp; laptop accessories, ring lights, tripods &amp; microphones, speakers, smartwatches,
-            security cameras, routers and more — genuine products, fair prices, fast delivery
+            Need new AirPods, a keyboard that keeps up, or gear for your next shoot? We've got
+            you covered — genuine phones &amp; electronics accessories, fair prices, fast delivery
             across Ghana.
           </p>
         </div>
