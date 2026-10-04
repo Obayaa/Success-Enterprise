@@ -8,22 +8,27 @@ import { useLocation } from 'react-router-dom';
 export function ScrollToTop() {
   const { pathname, search } = useLocation();
   const prevPathname = useRef(pathname);
-  const isFirstRender = useRef(true);
+  const prevSearch = useRef(search);
 
   useEffect(() => {
-    if (isFirstRender.current) {
-      // Leave the initial scroll position alone — this effect is for
-      // in-app navigation, not the very first page load.
-      isFirstRender.current = false;
+    const pathnameChanged = pathname !== prevPathname.current;
+    const searchChanged = search !== prevSearch.current;
+    prevPathname.current = pathname;
+    prevSearch.current = search;
+
+    if (!pathnameChanged && !searchChanged) {
+      // Nothing actually navigated — either the very first render, or (in
+      // dev) React StrictMode replaying this effect a second time on
+      // mount. Either way, leave the starting scroll position alone. A
+      // one-shot "first render" flag doesn't survive that replay, so this
+      // compares real location values instead.
       return;
     }
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const behavior: ScrollBehavior = reduceMotion ? 'auto' : 'smooth';
-    const navigatedToNewPage = pathname !== prevPathname.current;
-    prevPathname.current = pathname;
 
-    if (navigatedToNewPage) {
+    if (pathnameChanged) {
       window.scrollTo({ top: 0, behavior });
       return;
     }
