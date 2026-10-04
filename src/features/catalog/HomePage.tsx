@@ -34,7 +34,7 @@ export function HomePage() {
             Welcome to Success Enterprise — the home of quality tech.
           </h1>
           <p className="text-neutral-300 text-base sm:text-lg max-w-xl">
-            Need new AirPods, a keyboard that keeps up, or gear for your next shoot? We've got
+            Need new AirPods, ring lights for your content creation, phone accessories for aesthetic purposes or gear & electronics for your next shoot? We've got
             you covered — genuine phones &amp; electronics accessories, fair prices, fast delivery
             across Ghana.
           </p>
