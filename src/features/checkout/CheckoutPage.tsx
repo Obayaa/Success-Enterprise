@@ -65,7 +65,7 @@ export function CheckoutPage() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-4 py-8 flex flex-col gap-6">
+    <div className="max-w-xl mx-auto px-4 py-8 flex flex-col gap-6">
       <h1 className="font-display text-xl font-bold text-ink">Checkout</h1>
 
       <div className="bg-white border border-neutral-200 rounded-lg p-4 flex flex-col gap-1">
